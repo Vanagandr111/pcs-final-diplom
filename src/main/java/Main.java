@@ -17,11 +17,10 @@ public class Main {
                   PrintWriter out = new PrintWriter(socket.getOutputStream(), true))
                 {
                     System.out.println("Клиент подключен");
-                    out.println("connected");
                     String s;
                     while((s = in.readLine()) != null) {
                         var output = outputFromSearchResult(engine.search(s));
-                        System.out.println(output);
+                        System.out.println("Отправили: " + output);
                         out.println(output);
                     }
                 }
